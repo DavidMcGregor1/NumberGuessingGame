@@ -8,7 +8,11 @@ const output = document.getElementById("output");
 let attempts = 0;
 
 guessSubmit.addEventListener("click", checkGuess);
-
+guessInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    checkGuess();
+  }
+});
 function checkGuess() {
   const userGuess = parseInt(guessInput.value);
 
